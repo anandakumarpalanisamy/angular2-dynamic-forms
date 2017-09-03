@@ -1,0 +1,34 @@
+<md-card>
+
+    <md-card-title>Dynamic Forms Demo</md-card-title>
+
+    <md-card-content>
+
+        <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+            <div *ngFor="let question of questions">
+                <dynamic-form-question [question]="question" [form]="form"></dynamic-form-question>
+            </div>
+            <div class="select-container">
+                <button md-raised-button 
+                    color="primary"
+                    type="submit"
+                    [disabled]="!form.valid">Submit</button>
+            </div>
+
+        </form>
+
+    </md-card-content>
+</md-card>
+<md-card>
+
+    <md-card-title>Form Debug</md-card-title>
+
+    <md-card-content>
+
+        <div *ngIf="payload">
+            <strong>Saved the following values</strong><br><br>{{payload}}
+        </div>
+
+    </md-card-content>
+    
+</md-card>
