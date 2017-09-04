@@ -1,9 +1,9 @@
 export class QuestionBase<T> {
 
-    value: T;
-    key: string;
-    label: string;
-    required: boolean;
+    value: T; /* Form Control  Value */
+    key: string; /* Form Control Name */
+    label: string; /* Label */
+    required: boolean; 
     order: number;
     controlType: string;
 
